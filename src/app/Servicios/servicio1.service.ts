@@ -21,4 +21,8 @@ export class Servicio1Service {
     })
   }
 
+  getPersonas(){
+    return this.http.get(this.baseURL+'getAll');
+  }
+
 }

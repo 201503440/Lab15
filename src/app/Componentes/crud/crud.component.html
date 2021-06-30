@@ -1,4 +1,4 @@
-<div class="container">
+<div style="margin-top: 10%;" class="container">
     <form (submit)="agregarPersona($event)">
         <h3>INGRESE UNA PERSONA!</h3>
         <fieldset>
@@ -8,9 +8,29 @@
             <input placeholder="Apellido" type="apellido" id="apellido" type="text">
         </fieldset>
         <fieldset>
-            <button type="submit">
+            <button class="btn btn-primary" type="submit">
                 Agregar
             </button>
         </fieldset>
     </form>
+</div>
+<br><br>
+
+<div>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of personasArray">
+            <th scope="row">{{p[0]}}</th>
+            <td>{{p[1]}}</td>
+            <td>{{p[2]}}</td>
+          </tr>
+        </tbody>
+      </table>
 </div>

@@ -8,9 +8,14 @@ import { Servicio1Service } from "../../Servicios/servicio1.service";
 })
 export class CrudComponent implements OnInit {
 
+  personasArray: any = [];
+
   constructor(private servicio: Servicio1Service) { }
 
   ngOnInit(): void {
+    this.servicio.getPersonas().subscribe(data => {
+      this.personasArray = Object.values(data);
+    });
   }
 
   agregarPersona(event: any){
